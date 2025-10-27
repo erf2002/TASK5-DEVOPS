@@ -1,15 +1,15 @@
-# frist  build the docker image and then push it to the repo 
-  docker build -t erfanashraafi/fastapi-app:latest .
-  docker push erfanashraafi/fastapi-app:latest
+# first  build the docker image and then push it to the repo 
+  * docker build -t erfanashraafi/fastapi-app:latest .
+  * docker push erfanashraafi/fastapi-app:latest
 
 # then creat namespace names fastapi-app and deploy the deployment file on it also expose the service file 
   * k = kubectl
-  k create namespace fastapi-app
-  k apply -f deployment.yaml -n fastapi-app
-  k apply -f service.yaml -n fastapi-app
+  * k create namespace fastapi-app
+  * k apply -f deployment.yaml -n fastapi-app
+  * k apply -f service.yaml -n fastapi-app
 
 # we can change the replica to 1 
-  k scale -n fastapi-app deployment/fastapi-app --replicas=1
+  * k scale -n fastapi-app deployment/fastapi-app --replicas=1
 
 # we can describe our pod to see event and logs and some info about it 
   k describe pod -n fastapi-app fastapi-app-769ccccb75-r64kh  
